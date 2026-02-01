@@ -22,7 +22,7 @@ Make
 You just to need clone this repository in somewhat directory. "cd" into it and run it by command:
 make
 
----
+-----
 
 Available commands (v0.0.1):
 ./hexagon help
