@@ -20,7 +20,7 @@ GCC or CMake
 Make
 
 You just to need clone this repository in somewhat directory. "cd" into it and run it by command:
-```make
+make
 
 ---
 
