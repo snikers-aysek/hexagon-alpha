@@ -1,4 +1,4 @@
-HEXAGON Honey Pot Antivirus (v0.0.1) is totally open-source.
+HEXAGON Honey Pot Antivirus (v0.0.2) is totally open-source.
 
 Only for Linux. No Windows, please.
 
@@ -24,7 +24,9 @@ make
 
 -----
 
-Available commands (v0.0.1):
+Available commands (v0.0.2):
 ./hexagon help
 ./hexagon version
 ./hexagon status (just text now, so ts is not even important)
+./hexagon honeypot start (also just text)
+./hexagon honeypot stop (...again text.)
