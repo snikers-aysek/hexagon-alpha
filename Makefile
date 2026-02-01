@@ -1,18 +1,56 @@
-CC = gcc
-CFLAGS = -Wall -Wextra -O2
+# =====================
+# HEXAGON Makefile
+# v0.0.3-alpha
+# =====================
 
-SRC = src/main.c src/cli.c
-OBJ = $(SRC:.c=.o)
-TARGET = hexagon
+CC      = gcc
+CFLAGS  = -Wall -Wextra -std=c11 -g
+TARGET  = hexagon
 
+SRC_DIR = src
+OBJ_DIR = build
+
+SRCS = \
+	$(SRC_DIR)/main.c \
+	$(SRC_DIR)/cli/cli.c \
+	$(SRC_DIR)/core/hexagon.c \
+	$(SRC_DIR)/modules/honeypot.c \
+	$(SRC_DIR)/utils/log.c
+
+OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+
+# =====================
+# DEFAULT TARGET
+# =====================
 all: $(TARGET)
 
-$(TARGET): $(OBJ)
-	$(CC) $(CFLAGS) -o $@ $^
+# =====================
+# LINK
+# =====================
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $(OBJS)
 
-%.o: %.c
+# =====================
+# COMPILE
+# =====================
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+# =====================
+# INSTALL / UNINSTALL
+# =====================
+install: $(TARGET)
+	sudo install -m 755 $(TARGET) /usr/local/bin/$(TARGET)
+
+uninstall:
+	sudo rm -f /usr/local/bin/$(TARGET)
+
+# =====================
+# CLEAN
+# =====================
 clean:
-	rm -f $(OBJ) $(TARGET)
+	rm -rf $(OBJ_DIR) $(TARGET)
+
+.PHONY: all clean install uninstall
 
