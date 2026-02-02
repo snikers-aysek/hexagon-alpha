@@ -24,6 +24,10 @@ make
 
 -----
 
+If you want to start HEXAGON again, and its have been updated, you need to firstly 'make clean', than 'make'.
+
+-----
+
 Available commands (v0.0.4):
 ./hexagon help
 ./hexagon version
