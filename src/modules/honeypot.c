@@ -4,6 +4,8 @@
 #include "../utils/log.h"
 #include "honeypot.h"
 
+int honeypot_running = 0;
+
 #define HONEYPOT_DIR "honeypot_trap"
 
 void honeypot_start(void) {

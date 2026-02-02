@@ -3,7 +3,7 @@
 #include "../utils/log.h"
 #include "../modules/honeypot.h"
 
-static int hexagon_running = 0;
+int hexagon_running = 0;
 
 void hexagon_init(void) {
     hexagon_log(LOG_INFO, "HEXAGON  initializing...");
