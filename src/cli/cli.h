@@ -15,5 +15,6 @@ void hexagon_honeypot(int argc, char **argv);
 void hexagon_update(void);
 void hexagon_scan(void);
 void hexagon_clear_logs(void);
+void hexagon_restart(void);
 
 #endif

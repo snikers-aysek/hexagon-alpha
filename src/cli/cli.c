@@ -6,7 +6,9 @@
 #include "../utils/log.h"
 #include "cli.h"
 
-// Реализация команд
+extern int hexagon_running;
+extern int honeypot_running;
+
 void hexagon_help(void) {
     printf("HEXAGON %s - alpha\n", HEXAGON_VERSION);
     printf("Commands:\n");
@@ -20,6 +22,7 @@ void hexagon_help(void) {
     printf("  update         - update virus database (future)\n");
     printf("  scan           - scan files/processes (future)\n");
     printf("  clear-logs     - clear log file\n");
+    printf("  restart        - restart HEXAGON and active modules");
 }
 
 void hexagon_version(void) {
@@ -27,7 +30,8 @@ void hexagon_version(void) {
 }
 
 void hexagon_status(void) {
-    printf("HEXAGON status: %s\n", "Honeypot inactive"); // позже можно делать реальный статус
+    printf("HEXAGON status: %s\n", hexagon_running ? "running" : "stopped");
+    printf("Honeypot module: %s\n", honeypot_running ? "active" : "inactive");
 }
 
 void hexagon_log_cmd(void) {
@@ -51,6 +55,12 @@ void hexagon_start_cmd(void) {
 void hexagon_stop_cmd(void) {
     printf("Honeypot stopping...\n");
     hexagon_stop();
+}
+
+void hexagon_restart_cmd(void) {
+    printf("Hexagon restarting...\n");
+    hexagon_stop();
+    hexagon_start();
 }
 
 void hexagon_honeypot(int argc, char **argv) {
@@ -78,7 +88,6 @@ void hexagon_clear_logs(void) {
         printf("No log file to clear.\n");
 }
 
-// Основной парсер команд
 void cli_parse(int argc, char **argv) {
     if(argc < 2) {
         hexagon_help();
@@ -95,5 +104,6 @@ void cli_parse(int argc, char **argv) {
     else if(strcmp(argv[1], "update") == 0) hexagon_update();
     else if(strcmp(argv[1], "scan") == 0) hexagon_scan();
     else if(strcmp(argv[1], "clear-logs") == 0) hexagon_clear_logs();
+    else if(strcmp(argv[1], "restart") == 0) hexagon_restart_cmd();
     else printf("Unknown command: %s\n", argv[1]);
 }
