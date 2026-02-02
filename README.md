@@ -1,4 +1,4 @@
-HEXAGON Honey Pot Antivirus (v0.0.4) is totally open-source.
+HEXAGON Honey Pot Antivirus (v0.0.5) is totally open-source.
 
 Only for Linux. No Windows, please.
 
@@ -28,7 +28,7 @@ If you want to start HEXAGON again, and its have been updated, you need to first
 
 -----
 
-Available commands (v0.0.4):
+Available commands (v0.0.5):
 ./hexagon help
 ./hexagon version
 ./hexagon status
