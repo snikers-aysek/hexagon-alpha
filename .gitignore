@@ -1,0 +1,13 @@
+logs/
+*.log
+
+hexagon
+*.out
+
+*.o
+*.a
+build/
+
+core
+core.*
+
