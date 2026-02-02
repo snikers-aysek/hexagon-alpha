@@ -5,7 +5,11 @@ hexagon
 *.out
 
 *.o
+src/*.o
+src/**/*.o
 *.a
+src/*.o
+src/**/*.o
 build/
 
 core
