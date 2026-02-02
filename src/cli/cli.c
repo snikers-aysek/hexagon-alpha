@@ -30,8 +30,11 @@ void hexagon_version(void) {
 }
 
 void hexagon_status(void) {
-    printf("HEXAGON status: %s\n", hexagon_running ? "running" : "stopped");
-    printf("Honeypot module: %s\n", honeypot_running ? "active" : "inactive");
+    if(hexagon_running) {
+        printf("HEXAGON status: running (Honeypot active.)\n");
+    } else {
+        printf("HEXAGON status: stopped (Honeypot inactive.)\n");
+    }
 }
 
 void hexagon_log_cmd(void) {

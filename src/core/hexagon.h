@@ -1,7 +1,7 @@
 #ifndef HEXAGON_H
 #define HEXAGON_H
 
-#define HEXAGON_VERSION "v0.0.4-alpha"
+#define HEXAGON_VERSION "v0.0.5-alpha"
 
 void hexagon_init(void);
 void hexagon_start(void);
