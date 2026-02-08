@@ -20,25 +20,46 @@ If HEXAGON on another machine detects the same virus in the database, it automat
 
 ---
 
+## Important
+Highly recommended to do (after installation, firstly read "Installation and guide" and "Build and run" paragraphs):
+```
+sudo install -m 755 target/release/hexagon /usr/local/bin/hexagon
+```
+This will help to do just:
+```
+hexagon <command>
+```
+instead of:
+```
+./target/release/hexagon <command>
+```
+~~much better, huh?~~
+
+---
+
 ## Installation and usage
 
 1. Make sure **Rust** is installed: https://www.rust-lang.org/tools/install
 2. Clone the repository:
 
-```bash
+```
 git clone https://github.com/snikers-aysek/HEXAGON.git
 cd HEXAGON
 ```
 
 3. Build and run:
 
-```bash
+```
 cargo build --release
 ./target/release/hexagon <command>
 ```
-To rebuild after changes, just run: cargo build --release.
+To rebuild after changes, just run:
+```
+cargo build --release
+```
 
 ---
+## Commands
 
 Available commands:
 ```
@@ -57,6 +78,8 @@ hexagon scan                 - scan files/processes (future)
 ```
 
 ---
+
+## Logs
 
 All logs stored in:
 logs/hexagon.log
