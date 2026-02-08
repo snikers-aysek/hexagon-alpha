@@ -1,56 +1,25 @@
-# =====================
-# HEXAGON Makefile
-# v0.0.3-alpha
-# =====================
+# HEXAGON Makefile for Rust
+# v0.0.6-alpha
 
-CC      = gcc
-CFLAGS  = -Wall -Wextra -std=c11 -g
-TARGET  = hexagon
+# Build release
+build:
+	cargo build --release
 
-SRC_DIR = src
-OBJ_DIR = build
+# Run HEXAGON with arguments
+run:
+	cargo run --release -- $(ARGS)
 
-SRCS = \
-	$(SRC_DIR)/main.c \
-	$(SRC_DIR)/cli/cli.c \
-	$(SRC_DIR)/core/hexagon.c \
-	$(SRC_DIR)/modules/honeypot.c \
-	$(SRC_DIR)/utils/log.c
-
-OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
-
-# =====================
-# DEFAULT TARGET
-# =====================
-all: $(TARGET)
-
-# =====================
-# LINK
-# =====================
-$(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $(OBJS)
-
-# =====================
-# COMPILE
-# =====================
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-# =====================
-# INSTALL / UNINSTALL
-# =====================
-install: $(TARGET)
-	sudo install -m 755 $(TARGET) /usr/local/bin/$(TARGET)
-
-uninstall:
-	sudo rm -f /usr/local/bin/$(TARGET)
-
-# =====================
-# CLEAN
-# =====================
+# Clean build artifacts
 clean:
-	rm -rf $(OBJ_DIR) $(TARGET)
+	cargo clean
 
-.PHONY: all clean install uninstall
+# Install binary globally
+install:
+	cargo build --release
+	sudo install -m 755 target/release/hexagon /usr/local/bin/hexagon
 
+# Uninstall binary
+uninstall:
+	sudo rm -f /usr/local/bin/hexagon
+
+.PHONY: build run clean install uninstall
