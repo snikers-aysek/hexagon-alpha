@@ -1,17 +1,23 @@
+# Logs
 logs/
 *.log
 
+# Rust / Cargo
+target/
+Cargo.lock
+
+# Binaries
 hexagon
 *.out
 
-*.o
-src/*.o
-src/**/*.o
-*.a
-src/*.o
-src/**/*.o
-build/
-
+# Core dumps
 core
 core.*
 
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs .db
