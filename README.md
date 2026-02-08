@@ -1,37 +1,60 @@
-HEXAGON Honey Pot Antivirus (v0.0.5) is totally open-source.
+# HEXAGON Honey Pot Antivirus (v0.0.6-alpha)
 
-Only for Linux. No Windows, please.
+HEXAGON is a fully **open-source antivirus for Linux**, using a **honeypot system** to analyze malware.
 
-On this stage of development it is not even an antivirus, just basic commands on C.
+> Linux only. Windows is not supported.
 
-It's an antivirus, that create honeypots (fake-processes), that lures viruses into it and analyse.
-This is also one of most important features in HEXAGON: HEXAGON scans the virus, block it on PC and sent all data of the virus to "HEXAGON Virus DataBase".
+HEXAGON creates fake processes (honeypots) that lure viruses, analyzes them, and stores all data in the **HEXAGON Virus Database**.  
+If HEXAGON on another machine detects the same virus in the database, it automatically blocks it on startup.
 
-HEXAGON Virus DataBase - place, where is all data of scanned viruses. If HEXAGON on the other PC see the same data of virus, which in database, he's automatically block this.
+---
 
-```Please, do not use this now. You can test this, but this is NOT antivirus by now.
+## Features (v0.0.6-alpha)
 
------
+- CLI to manage the antivirus
+- Start / stop HEXAGON
+- Activate / deactivate honeypot
+- View logs (`logs/hexagon.log`)
+- Clear logs
+- Basic structure for future scanning and virus database updates
 
-If you want to test this, you need:
+---
 
-Linux
-GCC or CMake
-Make
+## Installation and usage
 
-You just to need clone this repository in somewhat directory. "cd" into it and run it by command:
-make
+1. Make sure **Rust** is installed: https://www.rust-lang.org/tools/install
+2. Clone the repository:
 
------
+```bash
+git clone https://github.com/snikers-aysek/HEXAGON.git
+cd HEXAGON
+```
 
-If you want to start HEXAGON again, and its have been updated, you need to firstly 'make clean', than 'make'.
+3. Build and run:
 
------
+```bash
+cargo build --release
+./target/release/hexagon <command>
+```
+To rebuild after changes, just run: cargo build --release.
 
-Available commands (v0.0.5):
-./hexagon help
-./hexagon version
-./hexagon status
-./hexagon honeypot start
-./hexagon honeypot stop
-...and other!
+---
+
+Available commands:
+hexagon help                 - show help
+hexagon version              - show HEXAGON version
+hexagon status               - show HEXAGON and honeypot status
+hexagon start                - start HEXAGON
+hexagon stop                 - stop HEXAGON
+hexagon restart              - restart HEXAGON
+hexagon honeypot start       - activate honeypot
+hexagon honeypot stop        - deactivate honeypot
+hexagon log                  - show last log lines
+hexagon clear-logs           - clear log file
+hexagon update               - update virus database (future)
+hexagon scan                 - scan files/processes (future)
+
+---
+
+All logs stored in:
+logs/hexagon.log
