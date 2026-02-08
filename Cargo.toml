@@ -1,0 +1,6 @@
+[package]
+name = "hexagon"
+version = "0.0.6-alpha"
+edition = "2021"
+
+[dependencies]
