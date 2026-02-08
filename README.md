@@ -41,6 +41,7 @@ To rebuild after changes, just run: cargo build --release.
 ---
 
 Available commands:
+```
 hexagon help                 - show help
 hexagon version              - show HEXAGON version
 hexagon status               - show HEXAGON and honeypot status
@@ -53,6 +54,7 @@ hexagon log                  - show last log lines
 hexagon clear-logs           - clear log file
 hexagon update               - update virus database (future)
 hexagon scan                 - scan files/processes (future)
+```
 
 ---
 
