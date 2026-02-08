@@ -53,6 +53,12 @@ fn hexagon_version() {
     println!("HEXAGON version: {}", crate::core::hexagon::HEXAGON_VERSION);
 }
 
+/* AH, YES. about this. ahem, where is my glasses..oh, here, uhm...
+ACTUALLY, this version my periodically say not the now version, because i may forgot to update this version, so all...ohh..all complaints about my lack of sleep🤓🤓🤓
+UHM, ACTUALLY, may be i...
+ow, i lost my nerd glasses. well, maybe, its for the best...
+*/
+
 fn hexagon_log_cmd() {
     use std::fs::File;
     use std::io::{BufReader, BufRead};
