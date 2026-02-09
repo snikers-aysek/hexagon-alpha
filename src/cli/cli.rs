@@ -10,7 +10,6 @@ pub fn cli_parse(hex: &mut Hexagon, args: &[String]) {
     match args[1].as_str() {
         "help" => hexagon_help(),
         "version" => hexagon_version(),
-        "status" => hexagon.status(),
         "log" => hexagon_log_cmd(),
         "start" => hex.start(),
         "stop" => hex.stop(),
