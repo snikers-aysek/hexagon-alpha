@@ -23,7 +23,7 @@ If HEXAGON on another machine detects the same virus in the database, it automat
 ## Important
 Highly recommended to do (after installation, firstly read "Installation and guide" and "Build and run" paragraphs):
 ```
-sudo install -m 755 target/release/hexagon-alpha /usr/local/bin/hexagon
+sudo install -m 755 target/release/hexagon /usr/local/bin/hexagon
 ```
 This will help to do just:
 ```
@@ -51,7 +51,7 @@ cd hexagon-alpha
 
 ```
 cargo build --release
-./target/release/hexagon-alpha <command>
+./target/release/hexagon <command>
 ```
 To rebuild after changes, just run:
 ```
