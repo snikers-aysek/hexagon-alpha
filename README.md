@@ -86,3 +86,5 @@ logs/hexagon.log
 
 ## License
 ![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
+
+NOTE — Bad4Ending is also a my nickname!
