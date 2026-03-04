@@ -83,3 +83,6 @@ hexagon scan                 - scan files/processes (future)
 
 All logs stored in:
 logs/hexagon.log
+
+## License
+![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
