@@ -2,6 +2,9 @@
 name = "hexagon"
 version = "0.0.6-alpha"
 edition = "2021"
+authors = ["Bad4Ending (snikers-aysek) 26092013isaac@gmail.com"]
+repository = "https://github.com/snikers-aysek/hexagon-alpha"
+license = "GPL-3.0-or-later"
 
 [dependencies]
 chrono = "0.4"
